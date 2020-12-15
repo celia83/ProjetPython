@@ -1,9 +1,9 @@
 # coding: utf-8
 
 from bs4 import BeautifulSoup
-import requests
+import requests, os
 
-def contenuHTML(url) :
+def contenuHTML(url):
     """
     Fonction qui utilise requests pour récupérer une page, mettre son contenu dans une variable et faire une soup à l'aide de BeautifulSoup (on parse le contenu html).
     :param url: l'url de la page à parser
@@ -20,51 +20,69 @@ def contenuHTML(url) :
 
     return soup
 
-def crawl_lemonde(url, nomClasse) :
+
+def crawl_lemonde(url, nomClasse):
     """
-    Fonction qui récupère les liens présents dans les balises a d'une page html et enregistre dans un fichier texte le contenu de chacune des page (titre, auteur, date, contenu)
+    Fonction qui récupère les liens présents dans les balises a d'une page html et enregistre dans un fichier texte le contenu de chacune des pages (titre, auteur, date, contenu) dans un dossier "Corpus"
     :param url: url de la page Web à crawler
     :param nomClasse : Nom de la classe dont on veut récupérer les liens
     :return: Ne retourne rien
     """
-    #Récupérer le contenu html de l'url pasré
+    # Récupérer le contenu html de l'url passé
     soup = contenuHTML(url)
-    #on trouve toutes les balises a
-    liens = soup.find_all("a",{'class':nomClasse})
+    # on trouve toutes les balises a
+    liens = soup.find_all("a", {'class': nomClasse})
 
-    # Pour chaque lien on extrait titre, auteur, date, contenu
-    for lien in liens :
-        #Récupérer les liens des a
+    #Création dud ossier dans lequel on enregistrera les fichiers .txt
+    try:
+        os.mkdir('../Corpus')
+    except:
+        print("Le dossier existe déjà.")
+    # Pour chaque lien on extrait titre, auteur, date, contenu et on l'enregistre dans un fichier texte dans le dossier "Corpus"
+    for i in range (1,21):
+        #On sélectionne un lien dans laliste des liens de la page
+        lien = liens[i]
+
+        # Récupérer les liens des a
         lien = lien.get("href")
 
-        #Parser le contenu du lien
+        # Parser le contenu du lien
         soup_liens = contenuHTML(lien)
 
-        #Trouver le titre
+        # Trouver le titre
         titre = (soup_liens.find("h1", {'class': 'article__title'})).string
-        print(titre)
-        #Trouver l'auteur
+
+        # Trouver l'auteur
         balises_auteur = soup_liens.find("a", {'class': 'article__author-link'})
-        #Traiter les cas où l'auteur n'est pas mentionné
-        if balises_auteur == None :
+        # Traiter les cas où l'auteur n'est pas mentionné
+        if balises_auteur == None:
             auteur = "Auteur inconnu"
-        else :
-            auteur = balises_auteur.string
+        else:
+            auteur = balises_auteur.get_text().strip()
 
-        #Trouver la date
+        # Trouver la date
         date = (soup_liens.find("p", {'class': 'meta__publisher'})).string
+        #Dans les cas où la balise ne porte pas le même nom de classe
+        if date == None :
+            date = (soup_liens.find("span", {'class': 'meta__date'})).string
 
-        #Trouver le corps du document
+        # Trouver le corps du document (composé de plusieurs balises <p>)
         balises_contenu = soup_liens.find_all("p", {'class': 'article__paragraph'})
-        contenu=""
+        contenu = ""
         for paragraphe in balises_contenu:
-            ###ATTENTION LE PROBLEME PEUT ETRE DU FAIT QU'IL Y A D AUTRESBALISES DANS LES PARAGRAPHES !!!!
-            test = paragraphe.string
-            print(test)
-        print(contenu)
+            # Extraire le texte des balises <p>
+            paragraphe = paragraphe.get_text()
+            # Enregistrer chaque paragraphe dans une seule variable
+            contenu += "\n" + paragraphe
 
-    #on récupère la page
+        #Créer le nom du fichier à partir de i (qui s'incrémente à chaque lien)
+        fileName = "text" +str(i)
+        i+=1
+
+        #Ouvrir le nouveau fichier à l'aide du nom de fichier et enregistrer les informations extraites dans le fichier
+        with open("../Corpus/" + fileName + ".txt", 'w', encoding="utf8") as text:
+            text.write(titre + "\n" + auteur + "\n" + date + "\n" + contenu)
 
 
-if __name__ == "__main__" :
+if __name__ == "__main__":
     crawl_lemonde("https://www.lemonde.fr/culture/", 'teaser__link')
