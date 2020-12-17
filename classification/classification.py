@@ -1,5 +1,5 @@
 # coding: utf-8
-import spacy,os
+import spacy, os
 
 
 def tokeniser(text):
@@ -28,7 +28,8 @@ def chargeChampsLexicaux():
     '''
 
     champsLexicaux = {}  # Contiendra le dictionnaire des champs lexicaux des thèmes
-    themes = ["art", "cinema", "litterature", "musique", "scenes"]  # Liste des thèmes qui nous intéressent pour lesquels nous avons une liste de mots dans des fichiers .txt
+    themes = ["art", "cinema", "litterature", "musique",
+              "scenes"]  # Liste des thèmes qui nous intéressent pour lesquels nous avons une liste de mots dans des fichiers .txt
     for theme in themes:
         # On enregistre le thème en clé et on enregistrera en valeur un dictionnaire contenant chaque mot associé au thème
         champsLexicaux[theme] = {}
@@ -49,14 +50,16 @@ def champLexTexte(textTokenise):
     :param textTokenise: Un texte tokenisé
     :return: Un dictionnaire de la forme {mot : {thème : occurrence}}
     '''
-    champLexText = {} #contiendra le dictionnaire {mot : {thème : occurrence}}
-    champsLexicaux = chargeChampsLexicaux() #charge les cinq thèmes avec leurs champs lexicaux
-    #On prend un mot du texte
+    champLexText = {}  # contiendra le dictionnaire {mot : {thème : occurrence}}
+
+    champsLexicaux = chargeChampsLexicaux()  # charge les cinq thèmes avec leurs champs lexicaux
+
+    # On prend un mot du texte
     for word in textTokenise:
-        #On parcourt les mots des thèmes
+        # On parcourt les mots des thèmes
         for theme in champsLexicaux.keys():
             if word in champsLexicaux[theme].keys():  # Si le mot fait partie du champ lexicale du thème
-                if word not in champLexText.keys(): # S'il n'a pas déjà été enregistré dans notre dico du champ lexical du texte
+                if word not in champLexText.keys():  # S'il n'a pas déjà été enregistré dans notre dico du champ lexical du texte
                     # On ajoute le mot avec en valeur un dico avec le thème en clé et 1 en valeur
                     champLexText[word] = {theme: 1}
                 else:  # S'il a déjà été enregistré on vérifie que le thème soit le même, si c'est le même on ajoute 1 à la valeur sinon on ajoute le thème en clé et 1 en vaeur
@@ -66,62 +69,140 @@ def champLexTexte(textTokenise):
                         champLexText[word][theme] += 1
     return champLexText
 
-def classeText(champLexText, text) :
+def nbMax(dicPourcentages):
+    listPourcentages = []  # Permettra de trouver le pourcentage le plus haut
+
+    # Créer le fichier de statistiques
+    for pourcentage in dicPourcentages:
+        listPourcentages.append(dicPourcentages[pourcentage])
+
+    # Trouver le pourcentage le plus haut
+    pourcentageMax = max(listPourcentages)
+    return pourcentageMax
+
+def trouveClasse(champLexText):
     '''
-    Crée un dossier avec les fichiers classés et un fichier .txt qui donne un récapitulatif de la classification (pourcentage d'appartenance à chaque thème
-    :param champLexText:
-    :return: ne retourne rien
+    Fonction qui prend en entrée le champ lexical d'un texte et en donne le thème et une liste des pourcentages d'appartenance à chaque thème
+    :param champLexText: un dictionnaire du champ lexical du texte
+    :return: retourne le thème du texte et un dictionnaire des pourcentages d'appartenance à chaque catégorie
     '''
-    try:
-        os.mkdir('ClassificationCorpus')
-    except:
-        print("Le dossier existe déjà.")
-    nbMots = 0
+    nbMots = 0.1  # Nombre de mots appartenant à tous les thèmes confondus pour calculer le pourcentage
     cinema = 0
     art = 0
-    litterature =0
+    litterature = 0
     scenes = 0
     musique = 0
+    # Compter le nombre de mot appartenant à chaque thème
     for word in champLexText.keys():
-        for theme in champLexText[word].keys() :
-            if theme == "cinema" :
+        for theme in champLexText[word].keys():
+            if theme == "cinema":
                 cinema += champLexText[word][theme]
                 nbMots += champLexText[word][theme]
-            elif theme == "art" :
+            elif theme == "art":
                 art += champLexText[word][theme]
                 nbMots += champLexText[word][theme]
-            elif  theme == "litterature":
+            elif theme == "litterature":
                 litterature += champLexText[word][theme]
                 nbMots += champLexText[word][theme]
-            elif  theme == "scenes" :
+            elif theme == "scenes":
                 scenes += champLexText[word][theme]
                 nbMots += champLexText[word][theme]
             elif theme == "musique":
                 musique += champLexText[word][theme]
                 nbMots += champLexText[word][theme]
 
-    pourcentages = { cinema/nbMots: "Cinéma", art/nbMots :"Art" ,litterature/nbMots : "Littérature", scenes/nbMots : "Scènes",musique/nbMots:"Musique"}
-    listPourcentages = []
+    # Enregister la proportion de mot pour chaque catégories
+    pourcentages = {"Cinéma": cinema / nbMots , "Art":art / nbMots , "Scènes" : scenes / nbMots, "Musique":musique / nbMots ,  "Littérature": litterature/nbMots}
 
-    with open ("ClassificationCorpus/stats.txt", "a", encoding="utf-8") as statfile :
-        statfile.write("Pourcentages d'appartenance aux thèmes : \n")
-        for pourcentage in pourcentages :
-            listPourcentages.append(pourcentage)
-            statfile.write( pourcentages[pourcentage]+ " : " + format(pourcentage,'.2%') + "\n")
 
-    pourcentageMax = max(listPourcentages)
-    print(pourcentages[pourcentageMax])
+    # Trouver le pourcentage le plus haut
+    pourcentageMax = nbMax(pourcentages)
 
+    #Trouver à quel thème correspond le pourcentage le plus hauts
+    for key in pourcentages.keys():
+        if pourcentages[key] == pourcentageMax :
+            categorie = key
+
+    return categorie, pourcentages
+
+
+
+def openFiletoClass (chemin):
+    """
+    Fonction qui ouvre un fichier, en exytrait le titre (première ligne) et le reste du fichier
+    :param chemin: chemiin où se trouve le texte
+    :return: retourne le titre (string) et le reste du fichier (string)
+    """
+    with open(chemin, "r", encoding="utf-8") as f :
+        contenu = f.readlines()
+        titre = contenu[0]
+        reste = "".join(contenu)
+    return titre, reste
+
+def classeText(chemin) :
+    '''
+    Fonction principale qui prend en entrée un texte, l'ouvre, le tokenise, en extrait le champ lexical pour le titre et le corps du texte, pondère le titre,
+    crée un fichier de statistiques avec le pourcentage d'appartenance du texte à chaque thème et classe le ficheir dans un dossier correspondant à son thème
+    :param chemin: chemin du texte à analyser
+    :return: Ne retourne rien
+    '''
+    # Ouvrir le texte
+    newChemin ="../Corpus/"+chemin
+    contenu = openFiletoClass(newChemin)
+    titre = contenu[0]
+    text = contenu[1]
+
+    # Tokeniser le text et le titre
+    textTokenise = tokeniser(text)
+    titreTokenise = tokeniser(titre)
+
+    # Enregistrer dans un dictionnaire le champ lexical du texte et du titre
+    champLexText = champLexTexte(textTokenise)
+    champLexTitre =  champLexTexte(titreTokenise)
+
+    #Trouver la catégorie d'appartenance du titre
+    catTitre = trouveClasse(champLexTitre)
+    catTitre = catTitre[0]
+
+    #Trouver la catégorie d'appartenance du texte
+    catTexte = trouveClasse(champLexText)
+    #categorieTexte = catTexte[0]
+    pourcentages = catTexte[1]
+
+    #Donner un pour plus important à la catégorie du titre (25% de plus) (modification du dico pourcentage)
+    pourcentages[catTitre]=+0.15
+
+    #Recalcule le pourcentage le plus, donc on trouve la nouvelle catégorie du texte
+    pourcentageMax = nbMax(pourcentages)
+
+    # Trouver à quel thème correspond le pourcentage le plus haut
+    for key in pourcentages.keys():
+        if pourcentages[key] == pourcentageMax:
+            catTexte = key
+
+    # Créer le dossier dans lequel on enregistrera les stats et les textes classés
     try:
-        os.mkdir("ClassificationCorpus/"+pourcentages[pourcentageMax])
-        with open("ClassificationCorpus/"+pourcentages[pourcentageMax]+"/text.txt", "w", encoding="utf-8") as file:
+        os.mkdir('ClassificationCorpus')
+    except:
+        print("Le dossier existe déjà. Les fichiers seront enregistrés dedans.")
+
+    #Ouvrir le fichier de stats et y enregistrer les informations de pourcentage d'appartenance à un thème
+    with open("ClassificationCorpus/stats.txt", "a", encoding="utf-8") as statfile:
+        statfile.write("Pourcentages d'appartenance aux thèmes pour le fichier "+chemin+": \n")
+        for pourcentage in pourcentages :
+            statfile.write(pourcentage + " : " + format(pourcentages[pourcentage], '.2%') + "\n")
+        statfile.write("\n")
+
+    # Créer le fichier thème auquel appartient le texte ou y enregister le texte si le gichier existe déjà
+    try:
+        os.mkdir("ClassificationCorpus/" + catTexte)
+        with open("ClassificationCorpus/" + catTexte+ "/"+chemin, "w", encoding="utf-8") as file:
             file.write(text)
     except:
-        with open("ClassificationCorpus/"+pourcentages[pourcentageMax]+"/text.txt", "w", encoding="utf-8") as file:
+        with open("ClassificationCorpus/" + catTexte + "/"+chemin, "w", encoding="utf-8") as file:
             file.write(text)
 
 if __name__ == "__main__":
-    text = "J'ai vu un film aujourd'hui avec un super comédien et un casting génial. Le comédien jouait un peintre."
-    textTokenise = tokeniser(text)
-    champLexText = champLexTexte(textTokenise)
-    classeText(champLexText, text)
+    chemins = os.listdir("../Corpus")
+    for chemin in chemins:
+        classeText(chemin)

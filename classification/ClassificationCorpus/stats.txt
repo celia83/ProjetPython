@@ -1,24 +1,140 @@
-Pourcentages d'appartenance aux thèmes :Cinéma : 0.5714285714285714
-Art : 0.14285714285714285
-Littérature : 0.0
-Scènes : 0.2857142857142857
-Musique : 0.0
-Pourcentages d'appartenance aux thèmes :Cinéma : 57.14%
-Art : 14.29%
-Musique : 0.00%
-Scènes : 28.57%
-Pourcentages d'appartenance aux thèmes : 
-Cinéma : 57.14%
-Art : 14.29%
-Musique : 0.00%
-Scènes : 28.57%
-Pourcentages d'appartenance aux thèmes : 
-Cinéma : 57.14%
-Art : 14.29%
-Musique : 0.00%
-Scènes : 28.57%
-Pourcentages d'appartenance aux thèmes : 
-Cinéma : 57.14%
-Art : 14.29%
-Musique : 0.00%
-Scènes : 28.57%
+Pourcentages d'appartenance aux thèmes pour le fichier text1.txt: 
+Cinéma : 29.33%
+Art : 14.66%
+Scènes : 8.80%
+Musique : 15.00%
+Littérature : 20.53%
+
+Pourcentages d'appartenance aux thèmes pour le fichier text10.txt: 
+Cinéma : 12.35%
+Art : 49.38%
+Scènes : 0.00%
+Musique : 15.00%
+Littérature : 12.35%
+
+Pourcentages d'appartenance aux thèmes pour le fichier text11.txt: 
+Cinéma : 0.00%
+Art : 47.62%
+Scènes : 0.00%
+Musique : 47.62%
+Littérature : 15.00%
+
+Pourcentages d'appartenance aux thèmes pour le fichier text12.txt: 
+Cinéma : 14.22%
+Art : 23.70%
+Scènes : 14.22%
+Musique : 14.22%
+Littérature : 15.00%
+
+Pourcentages d'appartenance aux thèmes pour le fichier text13.txt: 
+Cinéma : 12.45%
+Art : 8.30%
+Scènes : 12.45%
+Musique : 58.09%
+Littérature : 15.00%
+
+Pourcentages d'appartenance aux thèmes pour le fichier text14.txt: 
+Cinéma : 11.05%
+Art : 27.62%
+Scènes : 0.00%
+Musique : 16.57%
+Littérature : 15.00%
+
+Pourcentages d'appartenance aux thèmes pour le fichier text15.txt: 
+Cinéma : 19.87%
+Art : 39.74%
+Scènes : 6.62%
+Musique : 26.49%
+Littérature : 15.00%
+
+Pourcentages d'appartenance aux thèmes pour le fichier text16.txt: 
+Cinéma : 7.38%
+Art : 14.76%
+Scènes : 3.69%
+Musique : 62.73%
+Littérature : 15.00%
+
+Pourcentages d'appartenance aux thèmes pour le fichier text17.txt: 
+Cinéma : 22.10%
+Art : 5.52%
+Scènes : 16.57%
+Musique : 38.67%
+Littérature : 15.00%
+
+Pourcentages d'appartenance aux thèmes pour le fichier text18.txt: 
+Cinéma : 9.35%
+Art : 0.00%
+Scènes : 3.12%
+Musique : 77.88%
+Littérature : 15.00%
+
+Pourcentages d'appartenance aux thèmes pour le fichier text19.txt: 
+Cinéma : 21.15%
+Art : 12.08%
+Scènes : 6.04%
+Musique : 21.15%
+Littérature : 15.00%
+
+Pourcentages d'appartenance aux thèmes pour le fichier text2.txt: 
+Cinéma : 25.58%
+Art : 20.46%
+Scènes : 25.58%
+Musique : 15.00%
+Littérature : 5.12%
+
+Pourcentages d'appartenance aux thèmes pour le fichier text20.txt: 
+Cinéma : 37.91%
+Art : 9.48%
+Scènes : 23.70%
+Musique : 23.70%
+Littérature : 15.00%
+
+Pourcentages d'appartenance aux thèmes pour le fichier text3.txt: 
+Cinéma : 28.47%
+Art : 3.56%
+Scènes : 10.68%
+Musique : 15.00%
+Littérature : 32.03%
+
+Pourcentages d'appartenance aux thèmes pour le fichier text4.txt: 
+Cinéma : 0.00%
+Art : 13.25%
+Scènes : 0.00%
+Musique : 33.11%
+Littérature : 15.00%
+
+Pourcentages d'appartenance aux thèmes pour le fichier text5.txt: 
+Cinéma : 11.07%
+Art : 0.00%
+Scènes : 7.38%
+Musique : 15.00%
+Littérature : 7.38%
+
+Pourcentages d'appartenance aux thèmes pour le fichier text6.txt: 
+Cinéma : 41.49%
+Art : 8.30%
+Scènes : 16.60%
+Musique : 24.90%
+Littérature : 15.00%
+
+Pourcentages d'appartenance aux thèmes pour le fichier text7.txt: 
+Cinéma : 19.39%
+Art : 0.00%
+Scènes : 55.40%
+Musique : 15.00%
+Littérature : 0.00%
+
+Pourcentages d'appartenance aux thèmes pour le fichier text8.txt: 
+Cinéma : 38.31%
+Art : 0.00%
+Scènes : 15.00%
+Musique : 19.16%
+Littérature : 15.33%
+
+Pourcentages d'appartenance aux thèmes pour le fichier text9.txt: 
+Cinéma : 45.80%
+Art : 0.00%
+Scènes : 22.90%
+Musique : 15.27%
+Littérature : 15.00%
+

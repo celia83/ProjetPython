@@ -1,4 +1,5 @@
 sculpture
+ouvrage
 peinture
 esthétique
 architecture
@@ -11,6 +12,7 @@ baroque
 contemporain
 peintre
 gravure
+gravures
 artisanat
 archéologie
 décoratif
