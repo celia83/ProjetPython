@@ -79,7 +79,6 @@ répliques
 rôle
 script
 trio
-violentes
 Burton
 Cid
 décorateur

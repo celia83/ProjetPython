@@ -1,0 +1,24 @@
+Pourcentages d'appartenance aux thèmes :Cinéma : 0.5714285714285714
+Art : 0.14285714285714285
+Littérature : 0.0
+Scènes : 0.2857142857142857
+Musique : 0.0
+Pourcentages d'appartenance aux thèmes :Cinéma : 57.14%
+Art : 14.29%
+Musique : 0.00%
+Scènes : 28.57%
+Pourcentages d'appartenance aux thèmes : 
+Cinéma : 57.14%
+Art : 14.29%
+Musique : 0.00%
+Scènes : 28.57%
+Pourcentages d'appartenance aux thèmes : 
+Cinéma : 57.14%
+Art : 14.29%
+Musique : 0.00%
+Scènes : 28.57%
+Pourcentages d'appartenance aux thèmes : 
+Cinéma : 57.14%
+Art : 14.29%
+Musique : 0.00%
+Scènes : 28.57%
