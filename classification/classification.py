@@ -22,7 +22,7 @@ def tokeniser(text):
 
 def chargeChampsLexicaux():
     '''
-    Fonction qui permet de charger un dictionnaire des champs lexicaux desquatres thèmes : art, litterature, cinéma, musique et scène.
+    Fonction qui permet de charger un dictionnaire des champs lexicaux des quatres thèmes : art, litterature, cinéma, musique et scène.
     Le dictionnaire se construit de cette façon : {art : {mot :""}, musique : {mot : ""}}
     :return: Retourne une table de hachage avec tous les thèmes en clé et des dictionnaires pour chaque mot composant le thème.
     '''
@@ -129,8 +129,8 @@ def trouveClasse(champLexText):
 
 def openFiletoClass (chemin):
     """
-    Fonction qui ouvre un fichier, en exytrait le titre (première ligne) et le reste du fichier
-    :param chemin: chemiin où se trouve le texte
+    Fonction qui ouvre un fichier, en extrait le titre (première ligne) et le reste du fichier
+    :param chemin: chemin où se trouve le texte
     :return: retourne le titre (string) et le reste du fichier (string)
     """
     with open(chemin, "r", encoding="utf-8") as f :
