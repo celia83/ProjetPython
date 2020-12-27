@@ -1,143 +1,277 @@
 film
+films
 écran
+écrans
 projection
+projections
 cinéma
+cinés
+cinémas
 cinéphile
+cinéphiles
 cinéaste
+cinéastes
 salle
+salles
 ciné
 documentaire
+documentaires
 cinémathèque
+cinémathèques
 comédie
+comédies
 acteur
+acteurs
+actrice
+actrices
 adaptation
+adaptations
 ciné-club
+cinés-club
 cinématographe
+cinématographes
 comédien
+comédiens
+comédiennes
+comédienne
 réalisateur
+réalisateurs
+réalisatrice
+réalisatrices
 audiovisuel
+audiovisuels
+audiovisuelle
+audiovisuelles
 théâtre
+théâtres
 Oscar
 télévision
+télé
+télés
+télévisions
+téléviseur
+téléviseurs
+caméraman
+caméramans
+format
+formats
+numérique
+numériques
 tournage
+tournages
 Godard
 Hollywood
 Bollywood
 cinématographique
+cinématographiques
 burlesque
+burlesques
 vedette
+vedettes
 avant-première
 court-métrage
 filmique
+filmiques
 programmation
+programmations
 scénariste
+scénaristes
 DVD
 long-métrage
+long-métrages
 muet
-réalisatrice
+muets
 scénario
+scénarios
 caméra
+caméras
 cinématographie
+cinématographies
 festival de Cannes
 Jean-Luc Godard
 producteur
+producteurs
+productrice
+productrices
 spectateur
+spectateurs
+spectatrice
+spectratices
 cinoche
+cinoches
 doublage
+doublages
 hollywoodien
+hollywoodiens
+hollywoodiennes
+hollywoodienne
 Pathé
 salle de cinéma
+salles de cinéma
 César
 divertissement
+divertissements
 fiction
+fictions
 projecteur
+projecteurs
 septième art
 vue
+vues
 décor
+décors
 nouvelle vague
 Scorsese
 animation
+animations
 accessoiriste
+accessoiristes
 pellicule
+pellicules
 star
+stars
 studio
+studios
 science-fiction
 téléfilm
+téléfilms
 trilogie
+trilogies
 blockbuster
 casting
+castings
 distributeur
+distributeurs
 drame
+drames
 Hitchcock
 western
+westerns
 comique
+comiques
 figurant
+figurants
+figurante
+figurantes
 montage
+montages
 Cahiers du cinéma
 carrière
+carrières
 dramatique
+dramatiques
 filmographie
+filmographies
 horreur
+horreurs
 cadrage
+cadrages
 Griffith
 personnage
+personnages
 Tarantino
 cinéma français
 coproduction
+coproductions
 Fellini
 grand écran
+grands écrans
 rétrospective
+rétrospectives
 box-office
 cinémascope
+cinémascopes
 ciné-parc
 Coppola
 effets spéciaux
 néoréalisme
+néoréalismes
 péplum
+péplums
 policier
+policiers
+policière
+policières
 projeté
+projetés
+projetées
+projetée
 Rohmer
 Truffaut
 truqueur
+truqueurs
 décorateur
+décorateurs
+décoratrices
+décoratrice
 épouvante
+épouvantes
 fantastique
+fantastiques
+typon
 frères Lumière
 multiplexe
+muliplexes
+navet
+navets
+processus
+évolution
+évolutions
 récompense
+récompenses
+récompenser
+récompensé
+récompensée
+récompensées
+récompensés
+récompensa
 thriller
 travelling
 IMAX
 média
+médias
 Alfred Hitchcock
 amateur
+amateurs
+amatrice
+amatrices
 bruitage
+bruitages
 cinéphilie
+cinéphilies
 jury
 succès
 affiche
+affiches
 Antonioni
 blaxploitation
 Christian-Jaque
 Costa-Gavras
 histoire du cinéma
 monteur
+monteurs
 projectionniste
+projectionnistes
 André Bazin
 avant-garde
 bande-annonce
+bandes-annonce
 scène
+scènes
 cinéma muet
 Delon
 Pagnol
 prise
+prises
 rangée
+rangées
 Ridley Scott
 séance
+séances
 technicolor
-actrice
 blu-ray
 bobine
+bobines
 Brian De Palma
 Buñuel
 Cannes
@@ -145,73 +279,144 @@ Charlie Chaplin
 Cinémathèque française
 Claude Chabrol
 diffusé
+diffusés
+diffuser
+diffusées
+diffusée
+diffusa
+diffuse
 Fernandel
 Gérard Depardieu
 Guitry
 incarner
+incarne
+incarné
+incarnés
+incarnées
+incarnée
+incarna
 Lino Ventura
 nollywoodien
 polar
 pornographique
+pornographiques
 séquence
+séquences
 sortie
+sorties
 Steven Spielberg
 vidéo
+vidéos
 Disney
 Orson Welles
 rôle-titre
 cinéma américain
 diffusion
+diffusions
 Dracula
 filmer
+filmé
+filmés
+filmées
+filmée
+filma
+filme
+filmera
 François Truffaut
 Georges Méliès
 MGM
 réalisation
+réalisations
 Agnès Varda
 Luc Besson
 saga
-spectatrice
 tourné
+tournés
+tournées
+tournage
+tournages
+tournée
+tourne
 adaptateur
+adaptateurs
 artistique
+artistiques
 audiodescription
+audiodescriptions
 bandes originales
 Bertrand Blier
 Bertrand Tavernier
 budget
+budgets
+budgétaire
+budgétaires
 cadreur
+cadreurs
 censure
+censures
 Cinérama
 distribution
+distributions
 Edison
 Emmanuelle
 esthétique
 film culte
+films cultes
 Guillermo del Toro
 Ingmar Bergman
 interprète
+interprètes
 James Bond
 Jean Rouch
 kinétographe
+kinétographes
+kinétoscopes
 kinétoscope
 Louis de Funès
 machiniste
+michinistes
 metteur en scène
+metteurs en scène
 narration
+narrations
 nominé
+nominés
+nominée
+nominées
+nominer
 photographique
+photo
+photos
+photographiques
 postproduction
+postproductions
+prises de vues
 prise de vues
 produits dérivés
+produit dérivé
 public
+publics
 publicitaire
+publicitaires
 quartier des amusements
 Roman Polanski
 Sergueï Eisenstein
 société de production
+sociétés de production
 spot
+spots
+starlettes
 starlette
 support
+supports
 technicien
+techniciens
+technicienne
+techniciennes
 trucage
+trucages
+truquer
+truqué
+truqués
+truquées
+truquée
