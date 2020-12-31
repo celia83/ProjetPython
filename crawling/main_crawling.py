@@ -23,9 +23,9 @@ def contenuHTML(url):
 
 def crawl_lemonde(url, nomClasse):
     """
-    Fonction qui récupère les liens présents dans les balises a d'une page html et enregistre dans un fichier texte le contenu de chacune des pages (titre, auteur, date, contenu) dans un dossier "Corpus"
+    Fonction qui récupère les liens présents dans les balises <a> d'une page html et enregistre dans un fichier texte le contenu de chacune des pages (titre, auteur, date, contenu) dans un dossier "Corpus"
     :param url: url de la page Web à crawler
-    :param nomClasse : Nom de la classe dont on veut récupérer les liens
+    :param nomClasse : Nom de la classe (html) dont on veut récupérer les liens
     :return: Ne retourne rien
     """
     # Récupérer le contenu html de l'url passé
@@ -33,14 +33,14 @@ def crawl_lemonde(url, nomClasse):
     # on trouve toutes les balises a
     liens = soup.find_all("a", {'class': nomClasse})
 
-    #Création dud ossier dans lequel on enregistrera les fichiers .txt
+    #Création du dossier dans lequel on enregistrera les fichiers .txt
     try:
         os.mkdir('../Corpus')
     except:
         print("Le dossier existe déjà.")
     # Pour chaque lien on extrait titre, auteur, date, contenu et on l'enregistre dans un fichier texte dans le dossier "Corpus"
-    for i in range (1,21):
-        #On sélectionne un lien dans laliste des liens de la page
+    for i in range (1,21): #Pour notre exercice on va extraire le contenu des 20 premiers liens
+        #On sélectionne un lien dans la liste des liens de la page
         lien = liens[i]
 
         # Récupérer les liens des a
@@ -62,7 +62,7 @@ def crawl_lemonde(url, nomClasse):
 
         # Trouver la date
         date = (soup_liens.find("p", {'class': 'meta__publisher'})).string
-        #Dans les cas où la balise ne porte pas le même nom de classe
+        #Dans les cas où la balise ne porte pas le même nom de classe (le monde semble avoir deux façons d'appeler les classes de date)
         if date == None :
             date = (soup_liens.find("span", {'class': 'meta__date'})).string
 

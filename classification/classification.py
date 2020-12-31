@@ -6,7 +6,7 @@ def tokeniser(text):
     '''
     Fonction qui prend en entrée une chaine de caractères et ressort une tokenisation du texte (utilise spacy)
     :param text: Une chaine de caractères
-    :return: Liste des mots de la chaine de caractères
+    :return: Liste des mots de la chaine de caractères (strings)
     '''
     # tokenisation du texte avec spacy (donne un objet créé par spacy)
     nlpFr = spacy.load('fr_core_news_md')
@@ -47,7 +47,7 @@ def champLexTexte(textTokenise):
     '''
     Fonction qui prend en entrée un texte tokenisé, compare chaque mot avec un dictionnaire contenant les champs lexicaux des thèmes (art, musique, littérature, scene, cinéma)
     quand elle trouve un mot appartenant à un thème elle l'ajoute à un dictionnaire avec le thème en question et le nombre de fois que le mot a été trouvé pour ce thème.
-    :param textTokenise: Un texte tokenisé
+    :param textTokenise: Un texte tokenisé (liste de strings)
     :return: Un dictionnaire de la forme {mot : {thème : occurrence}}
     '''
     champLexText = {}  # contiendra le dictionnaire {mot : {thème : occurrence}}
@@ -58,7 +58,7 @@ def champLexTexte(textTokenise):
     for word in textTokenise:
         # On parcourt les mots des thèmes
         for theme in champsLexicaux.keys():
-            if word in champsLexicaux[theme].keys():  # Si le mot fait partie du champ lexicale du thème
+            if word in champsLexicaux[theme].keys():  # Si le mot fait partie du champ lexical du thème
                 if word not in champLexText.keys():  # S'il n'a pas déjà été enregistré dans notre dico du champ lexical du texte
                     # On ajoute le mot avec en valeur un dico avec le thème en clé et 1 en valeur
                     champLexText[word] = {theme: 1}
@@ -158,7 +158,7 @@ def classeText(chemin) :
 
     # Enregistrer dans un dictionnaire le champ lexical du texte et du titre
     champLexText = champLexTexte(textTokenise)
-    champLexTitre =  champLexTexte(titreTokenise)
+    champLexTitre = champLexTexte(titreTokenise)
 
     #Trouver la catégorie d'appartenance du titre
     catTitre = trouveClasse(champLexTitre)
@@ -166,13 +166,12 @@ def classeText(chemin) :
 
     #Trouver la catégorie d'appartenance du texte
     catTexte = trouveClasse(champLexText)
-    #categorieTexte = catTexte[0]
     pourcentages = catTexte[1]
 
-    #Donner un pour plus important à la catégorie du titre (25% de plus) (modification du dico pourcentage)
+    #Donner un poids plus important à la catégorie du titre (15% de plus) (modification du dico pourcentage)
     pourcentages[catTitre]=+0.15
 
-    #Recalcule le pourcentage le plus, donc on trouve la nouvelle catégorie du texte
+    #Recalcule le pourcentage le plus élevé, donc on trouve la nouvelle catégorie du texte
     pourcentageMax = nbMax(pourcentages)
 
     # Trouver à quel thème correspond le pourcentage le plus haut
