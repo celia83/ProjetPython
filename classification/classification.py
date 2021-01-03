@@ -72,7 +72,7 @@ def champLexTexte(textTokenise):
 def nbMax(dicPourcentages):
     listPourcentages = []  # Permettra de trouver le pourcentage le plus haut
 
-    # Créer le fichier de statistiques
+    # Faire la liste des pourcentages (et non pas un dictionnaire) : permettra d'utiliser la fonction max()
     for pourcentage in dicPourcentages:
         listPourcentages.append(dicPourcentages[pourcentage])
 
@@ -192,7 +192,7 @@ def classeText(chemin) :
             statfile.write(pourcentage + " : " + format(pourcentages[pourcentage], '.2%') + "\n")
         statfile.write("\n")
 
-    # Créer le fichier thème auquel appartient le texte ou y enregister le texte si le gichier existe déjà
+    # Créer le fichier thème auquel appartient le texte ou y enregister le texte si le fichier existe déjà
     try:
         os.mkdir("ClassificationCorpus/" + catTexte)
         with open("ClassificationCorpus/" + catTexte+ "/"+chemin, "w", encoding="utf-8") as file:
