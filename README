@@ -7,4 +7,4 @@ Ce projet se compose de deux parties distinctes :
  
  Les fichiers permettant la classification se trouve dans le dossier classification. De la même manière il suffit de lancer le script classification.py pour que le script classe les articles présents dans le dossier Corpus créé lors du crawling.
  Il faut faire attention de bien avoir les fichiers txt des lexiques : art, musique, scenes, litterature, cinema.
- Le résultat de la classification se trouvent ensuite dans le dossier Classification corpus où on trouve des dossiers correspondant aux thèmes d'appartenance des articles avec les articles à l'intérieur et un fichier stats.txt qui recense tous les articles et les pourcentages d'appartenance à chaque thème.
+ Les résultat de la classification se trouvent ensuite dans le dossier Classification corpus où on trouve des dossiers correspondant aux thèmes d'appartenance des articles avec les articles à l'intérieur et un fichier stats.txt qui recense tous les articles et les pourcentages d'appartenance à chaque thème.
