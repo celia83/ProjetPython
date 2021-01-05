@@ -1,0 +1,10 @@
+Ce projet se compose de deux parties distinctes :
+  -Une partie de crawling
+  -Une partie de classification
+ 
+ Les fichiers permettant le crawling de pages web se trouve dans le dossier crawling. Il suffit de lancer le script main_crawling.py pour aspirer les 20 premiers articles de la section culture du site LeMonde.fr
+ Les résultats se trouvent dans le dossier Corpus.
+ 
+ Les fichiers permettant la classification se trouve dans le dossier classification. De la même manière il suffit de lancer le script classification.py pour que le script classe les articles présents dans le dossier Corpus créé lors du crawling.
+ Il faut faire attention de bien avoir les fichiers txt des lexiques : art, musique, scenes, litterature, cinema.
+ Le résultat de la classification se trouvent ensuite dans le dossier Classification corpus où on trouve des dossiers correspondant aux thèmes d'appartenance des articles avec les articles à l'intérieur et un fichier stats.txt qui recense tous les articles et les pourcentages d'appartenance à chaque thème.
